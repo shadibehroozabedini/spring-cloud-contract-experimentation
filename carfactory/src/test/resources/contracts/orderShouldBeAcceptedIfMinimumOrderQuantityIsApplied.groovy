@@ -3,13 +3,13 @@ package contracts
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
-    description "should return refused when order quantity is less than minimum required"
+    description "should return accepted when order quantity is greater than minimum required"
     request {
         method POST()
         url("/orders/check") {
             body(
                     "id": "order-id",
-                    "quantity": 20
+                    "quantity": 1000
             )
             headers {
                 contentType(applicationJson())
@@ -17,7 +17,7 @@ Contract.make {
         }
     }
     response {
-        body("refused")
+        body("accepted")
         status 200
     }
 }
