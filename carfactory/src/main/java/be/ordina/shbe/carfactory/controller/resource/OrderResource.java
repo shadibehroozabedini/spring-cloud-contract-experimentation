@@ -1,16 +1,18 @@
 package be.ordina.shbe.carfactory.controller.resource;
 
-public class CarResource {
+public class OrderResource {
     private String id;
     private String make;
     private String model;
     private int year;
+    private int quantity;
 
-    private CarResource(Builder builder) {
+    private OrderResource(Builder builder) {
         this.id = builder.id;
         this.make = builder.make;
         this.model = builder.model;
         this.year = builder.year;
+        this.quantity = builder.quantity;
     }
 
     public String getId() {
@@ -29,6 +31,10 @@ public class CarResource {
         return year;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
     public static Builder builder() {
         return new Builder();
     }
@@ -38,6 +44,7 @@ public class CarResource {
         private String make;
         private String model;
         private int year;
+        private int quantity;
 
         public Builder id(String id) {
             this.id = id;
@@ -59,8 +66,13 @@ public class CarResource {
             return this;
         }
 
-        public CarResource build() {
-            return new CarResource(this);
+        public Builder quantity(int quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        public OrderResource build() {
+            return new OrderResource(this);
         }
     }
 }

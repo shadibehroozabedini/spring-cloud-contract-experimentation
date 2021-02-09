@@ -8,8 +8,8 @@ Contract.make {
         method POST()
         url("/orders/check") {
             body(
-                    "id": "order-id",
-                    "quantity": 20
+                    "quantity": 20,
+                    "model":"LEAF"
             )
             headers {
                 contentType(applicationJson())
