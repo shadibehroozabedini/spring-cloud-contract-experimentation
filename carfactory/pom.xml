@@ -31,13 +31,11 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -53,8 +51,6 @@
 			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
-				<version>3.0.1</version>
-				<!--<version>${spring-cloud-verifier-plugin.version}</version>-->
 				<extensions>true</extensions>
 				<configuration>
 					<baseClassForTests>be.ordina.shbe.carfactory.ContractVerifierBase</baseClassForTests>
