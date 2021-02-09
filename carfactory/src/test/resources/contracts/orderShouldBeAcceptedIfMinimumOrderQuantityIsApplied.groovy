@@ -6,7 +6,7 @@ Contract.make {
     description "should return accepted when order quantity is greater than minimum required"
     request {
         method POST()
-        url("/orders/check") {
+        url("/orders/check")
             body(
                     "quantity": 1000,
                     "model":"LEAF"
@@ -14,7 +14,6 @@ Contract.make {
             headers {
                 contentType(applicationJson())
             }
-        }
     }
     response {
         body("accepted")

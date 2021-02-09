@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @AutoConfigureStubRunner(
         stubsMode = StubRunnerProperties.StubsMode.LOCAL,
-        ids = "be.ordina.shbe:carfactory:+:stubs:8080")
+        ids = {"be.ordina.shbe:carfactoryjava:+:stubs:8085","be.ordina.shbe:carfactory:+:stubs:8080"})
 class OrderControllerTest {
 
     @Autowired
@@ -38,7 +38,7 @@ class OrderControllerTest {
     }
 
     @Test
-    void givenOrder_whenQuantityIsGreaterThanMinimumRequired_thenOrderIsAccedpted() throws Exception {
+    void givenOrder_whenQuantityIsGreaterThanMinimumRequired_thenOrderIsAccepted() throws Exception {
         this.mockMvc.perform(get("/orders/?quantity=1000")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(HttpStatus.OK.value()))
